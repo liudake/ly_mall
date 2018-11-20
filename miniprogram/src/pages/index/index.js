@@ -1,11 +1,12 @@
 //index.js
-import { getByTag } from './s';
+import { getByTag } from '../../service/byTag/index';
 const app = getApp();
 
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
+    test: [],
     logged: false,
     takeSession: false,
     requestResult: ''
@@ -18,10 +19,6 @@ Page({
       });
       return;
     }
-    //  请求接口
-    getByTag().then(res => {
-      console.log('res', res);
-    });
     // 获取用户信息
     // wx.getSetting({
     //   success: res => {
@@ -40,6 +37,18 @@ Page({
     // });
   },
 
+  onShow: function() {
+    //  测试请求接口
+    getByTag({
+      tag: '前端',
+      src: 'web',
+      t: '1'
+    }).then(res => {
+      console.log('res结果', res);
+      this.test = res.d;
+    });
+  },
+  
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({

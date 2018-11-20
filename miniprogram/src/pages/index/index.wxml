@@ -40,4 +40,8 @@
     </navigator>
   </view>
 
+  <view class="uploader">
+    <text>{{ test }}</text>
+  </view>
+
 </view>

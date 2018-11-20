@@ -21,15 +21,13 @@ export default {
         }
       })
       .then(response => {
-        console.log('response', response);
-        // return checkStatus(response);
+        return checkStatus(response);
       })
       .then(res => {
-        // return checkCode(res);
+        return checkCode(res);
       })
       .catch(err => {
-        console.log('err', err);
-        // return checkErr(err);
+        return checkErr(err);
       });
   },
   post(url, data = '', isLoading = true) {
