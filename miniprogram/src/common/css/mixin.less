@@ -1,0 +1,73 @@
+@import './variable.less';
+
+.no-wrap(@lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @lines;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.no-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.extend-click(@top: -10px, @left: -10px, @right: -10px, @bottom: -10px,) {
+  &:before {
+    content: '';
+    position: absolute;
+    top: @top;
+    left: @left;
+    right: @right;
+    bottom: @bottom;
+  }
+}
+
+.border-none() {
+  &:after {
+    display: none;
+  }
+}
+
+.border-hide() {
+  &:after {
+    border: none;
+  }
+}
+
+// 背景图片地址和大小
+.bis(@url) {
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// flex布局
+.layout(@dir: column, @justify: center, @align: right) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+//定位上下左右居中
+.center(@top: 50%, @left: 50%, @zIndex: 0) {
+  position: absolute;
+  top: @top;
+  left: @left;
+  z-index: @zIndex;
+  transform: translate3d(-@top, -@left, 0);
+}
+
+//绝对定位占满屏幕
+.pAbsolute(@top: 0, @left: 0, @right: 0, @bottom: 0, @bgColor: @color-background-f3, @zIndex:100) {
+  position: absolute;
+  top: @top;
+  left: @left;
+  right: @right;
+  bottom: @bottom;
+  z-index: @zIndex;
+  background-color: @bgColor;
+}

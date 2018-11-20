@@ -1,13 +1,14 @@
 /**index.wxss**/
+@import "../../common/css/variable.less";
+
 page {
-  background: #3A3A3A;
+  background: @color-text-three;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.userinfo,
-.uploader,
-.tunnel {
+
+.userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
@@ -20,6 +21,7 @@ page {
   align-items: center;
   transition: all 300ms ease;
 }
+
 .userinfo-avatar {
   width: 100rpx;
   height: 100rpx;
@@ -28,33 +30,37 @@ page {
   background-size: cover;
   background-color: white;
 }
+
 .userinfo-avatar:after {
   border: none;
 }
+
 .userinfo-nickname {
   font-size: 32rpx;
   color: #007aff;
   background-color: white;
   background-size: cover;
 }
+
 .userinfo-nickname::after {
   border: none;
 }
-.uploader,
-.tunnel {
+
+.uploader, .tunnel {
   height: auto;
   padding: 0 0 0 40rpx;
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
 }
-.uploader-text,
-.tunnel-text {
+
+.uploader-text, .tunnel-text {
   width: 100%;
   line-height: 52px;
   font-size: 34rpx;
   color: #007aff;
 }
+
 .uploader-container {
   width: 100%;
   height: 400rpx;
@@ -65,13 +71,16 @@ page {
   box-sizing: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .uploader-image {
   width: 100%;
   height: 360rpx;
 }
+
 .tunnel {
   padding: 0 0 0 40rpx;
 }
+
 .tunnel-text {
   position: relative;
   color: #222;
@@ -82,17 +91,21 @@ page {
   box-sizing: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .tunnel-text:first-child {
   border-top: none;
 }
+
 .tunnel-switch {
   position: absolute;
   right: 20rpx;
   top: -2rpx;
 }
+
 .disable {
   color: #888;
 }
+
 .service {
   position: fixed;
   right: 40rpx;
@@ -107,13 +120,16 @@ page {
   justify-content: center;
   transition: all 300ms ease;
 }
+
 .service-button {
   position: absolute;
   top: 40rpx;
 }
+
 .service:active {
   box-shadow: none;
 }
+
 .request-text {
   padding: 20rpx 0;
   font-size: 24rpx;

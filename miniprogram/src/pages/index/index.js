@@ -19,6 +19,18 @@ Page({
       });
       return;
     }
+    //  测试请求接口
+    getByTag({
+      tag: '前端',
+      src: 'web',
+      t: '1'
+    }).then(res => {
+      console.log('res结果', res);
+      this.setData({
+        test: res.d[0].tag
+      });
+      // this.test = res.d;
+    });
     // 获取用户信息
     // wx.getSetting({
     //   success: res => {
@@ -37,18 +49,8 @@ Page({
     // });
   },
 
-  onShow: function() {
-    //  测试请求接口
-    getByTag({
-      tag: '前端',
-      src: 'web',
-      t: '1'
-    }).then(res => {
-      console.log('res结果', res);
-      this.test = res.d;
-    });
-  },
-  
+  onReady: function() {},
+
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({

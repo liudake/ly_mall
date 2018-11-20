@@ -2,7 +2,7 @@ import { baseURL } from './constants';
 import './interceptors';
 import { checkStatus, checkCode, checkErr } from './config-check';
 
-let Fly = require('../static/js/flyio/wx'); //npm引入方式
+let Fly = require('../static/js/flyio/wx.umd.min'); //npm引入方式
 
 let fly = new Fly(); //创建fly实例
 export default {

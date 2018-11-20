@@ -1,4 +1,3 @@
-/**app.wxss**/
 .bold {
   font-weight: 700;
 }
@@ -39,10 +38,4 @@ textarea {
   line-height: 0;
   clear: both;
   visibility: hidden;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
 }
