@@ -1,1 +1,30 @@
-@import '../common/index.wxss';.van-panel{background:#fff}.van-panel__header-value{color:#f44}.van-panel__footer{padding:10px 15px}
+.van-panel {
+  position: relative;
+  padding: 0 8px;
+  background: #fff;
+}
+.van-panel__header {
+  position: relative;
+  /* color: #f44; */
+}
+.van-panel__header:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  bottom: 4px;
+  border-left: 3px solid #e95623;
+}
+.van-panel__header-title {
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.van-panel__header-desc {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #989898;
+}
+.van-panel__footer {
+  padding: 10px 15px;
+}

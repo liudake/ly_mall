@@ -39,5 +39,8 @@
         "text": "个人中心"
       }
     ]
+  },
+  "usingComponents": {
+    "van-button": "./static/js/vant-weapp/dist/button/index"
   }
 }

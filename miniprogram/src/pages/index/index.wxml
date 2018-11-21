@@ -1,47 +1,58 @@
 <!--index.wxml-->
-<view class="container">
+<view class="ly-home">
+  <!-- 搜索 -->
+  <view class="ly-home-search">
+    <van-search
+      value="{{ value }}" 
+      input-align="center"
+      placeholder="搜索你要的商品" 
+    />
+  </view>
 
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-    ></button>
-    <view>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+  <!-- 轮播图 -->
+  <view class="ly-home-swiper">
+    <swiper 
+      indicator-dots="{{true}}"
+      autoplay="{{true}}"
+      circular="{{true}}"
+    >
+      <block wx:for="{{background}}" wx::key="*this">
+        <swiper-item>
+          <view class="ly-home-swiper-item ly-home-swiper-item-{{item}}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 商品区 -->
+  <view class="ly-home-main">
+    <!-- 热门商品区 -->
+    <van-panel title="热销榜" desc="每日热销指南">
+      <view class="ly-home-main-mall">
+        <scroll-view class="ly-home-main-mall-scroll" scroll-x style="width: 100%">
+          <view class="ly-home-main-mall-wrap" wx:for="{{mallList}}" wx::key="*this">
+            <image class="ly-home-main-mall-img" mode="{{item.mode}}" src="{{item.src}}"></image>
+            <view class="ly-home-main-mall-name">{{item.name}}</view>
+            <view class="ly-home-main-mall-price text-center">
+              <text class="ly-home-main-mall-price-text">¥{{item.price}}</text>
+              <text class="ly-home-main-mall-price-initia">¥{{item.initialPrice}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </van-panel>
+
+    <!-- tab商品区 -->
+    <view class="ly-home-main-tab-wrap">
+      <van-tabs active="{{ active }}" bind:change="onChange">
+        <van-tab title="标签 1">内容 1</van-tab>
+        <van-tab title="标签 2">内容 2</van-tab>
+        <van-tab title="标签 3">内容 3</van-tab>
+        <van-tab title="标签 4">内容 4</van-tab>
+        <van-tab title="标签 5">内容 5</van-tab>
+        <van-tab title="标签 6">内容 6</van-tab>
+      </van-tabs>
     </view>
-  </view>
-
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text class="bold">上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
-
-  <!-- 操作数据库 -->
-  <view class="uploader">
-    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
-      <text>前端操作数据库</text>
-    </navigator>
-  </view>
-
-  <!-- 新建云函数 -->
-  <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
-    </navigator>
-  </view>
-
-  <view class="uploader">
-    <text>{{ test }}</text>
   </view>
 
 </view>

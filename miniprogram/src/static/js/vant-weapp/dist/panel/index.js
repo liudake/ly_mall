@@ -4,7 +4,6 @@ VantComponent({
   props: {
     desc: String,
     title: String,
-    status: String,
-    useFooterSlot: Boolean
+    status: String
   }
 });

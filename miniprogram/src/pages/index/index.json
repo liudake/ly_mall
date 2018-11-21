@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents": {
+    "van-search": "../../static/js/vant-weapp/dist/search/index",
+    "van-panel": "../../static/js/vant-weapp/dist/panel/index",
+    "van-tab": "../../static/js/vant-weapp/dist/tab/index",
+    "van-tabs": "../../static/js/vant-weapp/dist/tabs/index"
+  }
+}

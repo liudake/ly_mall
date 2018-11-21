@@ -1,24 +1,60 @@
 //index.js
 import { getByTag } from '../../service/byTag/index';
-const app = getApp();
 
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {},
-    test: [],
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    mallList: [
+      {
+        id: '1',
+        mode: 'aspectFit',
+        price: '123',
+        name: '当时的',
+        initialPrice: '300',
+        src:
+          'http://img3.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=26&gp=0.jpg'
+      },
+      {
+        id: '2',
+        mode: '',
+        price: '22',
+        name: '读书读书读书读书读书读书得瑟',
+        initialPrice: '66',
+        src:
+          'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
+      },
+      {
+        id: '3',
+        mode: 'aspectFill',
+        price: '323',
+        name: '读书读书读读书读书读书读书读书读书得瑟书读书读书读书得瑟',
+        initialPrice: '455',
+        src:
+          'http://img1.imgtn.bdimg.com/it/u=4095470285,4213575198&fm=26&gp=0.jpg'
+      },
+      {
+        id: '4',
+        mode: 'scaleToFill',
+        price: '13',
+        initialPrice: '30',
+        name: '来来来',
+        src:
+          'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
+      },
+      {
+        id: '5',
+        mode: 'aspectFit',
+        price: '32',
+        initialPrice: '45',
+        name: '电话就可以',
+        src:
+          'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
+      }
+    ],
+    test: []
   },
 
   onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib'
-      });
-      return;
-    }
     //  测试请求接口
     getByTag({
       tag: '前端',
@@ -29,7 +65,6 @@ Page({
       this.setData({
         test: res.d[0].tag
       });
-      // this.test = res.d;
     });
     // 获取用户信息
     // wx.getSetting({
@@ -47,86 +82,5 @@ Page({
     //     }
     //   }
     // });
-  },
-
-  onReady: function() {},
-
-  onGetUserInfo: function(e) {
-    if (!this.logged && e.detail.userInfo) {
-      this.setData({
-        logged: true,
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
-      });
-    }
-  },
-
-  onGetOpenid: function() {
-    // 调用云函数
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid);
-        app.globalData.openid = res.result.openid;
-        wx.navigateTo({
-          url: '../userConsole/userConsole'
-        });
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err);
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions'
-        });
-      }
-    });
-  },
-
-  // 上传图片
-  doUpload: function() {
-    // 选择图片
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function(res) {
-        wx.showLoading({
-          title: '上传中'
-        });
-
-        const filePath = res.tempFilePaths[0];
-
-        // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0];
-        wx.cloud.uploadFile({
-          cloudPath,
-          filePath,
-          success: res => {
-            console.log('[上传文件] 成功：', res);
-
-            app.globalData.fileID = res.fileID;
-            app.globalData.cloudPath = cloudPath;
-            app.globalData.imagePath = filePath;
-
-            wx.navigateTo({
-              url: '../storageConsole/storageConsole'
-            });
-          },
-          fail: e => {
-            console.error('[上传文件] 失败：', e);
-            wx.showToast({
-              icon: 'none',
-              title: '上传失败'
-            });
-          },
-          complete: () => {
-            wx.hideLoading();
-          }
-        });
-      },
-      fail: e => {
-        console.error(e);
-      }
-    });
   }
 });
