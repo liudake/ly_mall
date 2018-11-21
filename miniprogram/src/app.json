@@ -16,16 +16,25 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "selectedColor": "#000",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
     "list": [
       {
+        "iconPath": "./common/images/home@2x.png",
+        "selectedIconPath": "./common/images/home@2x.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
+        "iconPath": "./common/images/shopping@2x.png",
+        "selectedIconPath": "./common/images/shopping@2x.png",
         "pagePath": "pages/storageConsole/storageConsole",
         "text": "购物车"
       },
       {
+        "iconPath": "./common/images/my@2x.png",
+        "selectedIconPath": "./common/images/my@2x.png",
         "pagePath": "pages/databaseGuide/databaseGuide",
         "text": "个人中心"
       }
