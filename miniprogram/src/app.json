@@ -1,23 +1,24 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/me/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/chooseLib/chooseLib",
+    "pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#f44336",
     "navigationBarTitleText": "亮源商城",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#000",
-    "borderStyle": "white",
+    "borderStyle": "#f44336",
     "backgroundColor": "#fff",
     "list": [
       {
@@ -29,13 +30,13 @@
       {
         "iconPath": "./common/images/shopping@2x.png",
         "selectedIconPath": "./common/images/shopping@2x.png",
-        "pagePath": "pages/storageConsole/storageConsole",
+        "pagePath": "pages/databaseGuide/databaseGuide",
         "text": "购物车"
       },
       {
         "iconPath": "./common/images/my@2x.png",
         "selectedIconPath": "./common/images/my@2x.png",
-        "pagePath": "pages/databaseGuide/databaseGuide",
+        "pagePath": "pages/me/index",
         "text": "个人中心"
       }
     ]

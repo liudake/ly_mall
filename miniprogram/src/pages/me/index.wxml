@@ -1,0 +1,12 @@
+<view>
+  <view class="header">
+    <image class="circle" src="https://avatars1.githubusercontent.com/u/19321222?s=60&v=4"></image>
+    <text>hhs</text>
+  </view>
+  <view class="tab-wr">
+    <text>购物车</text>
+    <text>关注</text>
+    <text>优惠券</text>
+    <text>活动</text>
+  </view>
+</view>
