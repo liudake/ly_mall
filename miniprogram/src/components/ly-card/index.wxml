@@ -1,0 +1,24 @@
+<view class="ly-card">
+  <view class="ly-card-product">
+    <view class="ly-card-img-wrap">
+      <image
+        class="ly-card-thumb"
+        src="http://img3.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=26&gp=0.jpg"
+      ></image>
+    </view>
+    <view class="ly-card-info">
+      <view class="ly-card-info-title">{{ title }}</view>
+      <view class="ly-card-info-price">
+        <text class="ly-card-info-price-text" wx:if="{{price}}"
+          >¥{{ price }}</text
+        >
+        <text class="ly-card-info-price-origin" wx:if="{{originPrice}}"
+          >¥{{ originPrice }}</text
+        >
+        <text class="ly-card-info-price-num" wx:if="{{num}}"
+          >{{ num }}件已售</text
+        >
+      </view>
+    </view>
+  </view>
+</view>

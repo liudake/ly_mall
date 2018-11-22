@@ -9,8 +9,8 @@ Page({
         id: '1',
         mode: 'aspectFit',
         price: '123',
-        name: '当时的',
-        initialPrice: '300',
+        title: '当时的',
+        originPrice: '300',
         src:
           'http://img3.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=26&gp=0.jpg'
       },
@@ -18,8 +18,8 @@ Page({
         id: '2',
         mode: '',
         price: '22',
-        name: '读书读书读书读书读书读书得瑟',
-        initialPrice: '66',
+        title: '读书读书读书读书读书读书得瑟',
+        originPrice: '66',
         src:
           'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
       },
@@ -27,8 +27,8 @@ Page({
         id: '3',
         mode: 'aspectFill',
         price: '323',
-        name: '读书读书读读书读书读书读书读书读书得瑟书读书读书读书得瑟',
-        initialPrice: '455',
+        title: '读书读书读读书读书读书读书读书读书得瑟书读书读书读书得瑟',
+        originPrice: '455',
         src:
           'http://img1.imgtn.bdimg.com/it/u=4095470285,4213575198&fm=26&gp=0.jpg'
       },
@@ -36,8 +36,8 @@ Page({
         id: '4',
         mode: 'scaleToFill',
         price: '13',
-        initialPrice: '30',
-        name: '来来来',
+        originPrice: '30',
+        title: '来来来',
         src:
           'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
       },
@@ -45,13 +45,184 @@ Page({
         id: '5',
         mode: 'aspectFit',
         price: '32',
-        initialPrice: '45',
-        name: '电话就可以',
+        originPrice: '45',
+        title: '电话就可以',
         src:
           'http://img3.imgtn.bdimg.com/it/u=3258641584,555286175&fm=26&gp=0.jpg'
       }
     ],
-    test: []
+    tabList: [
+      {
+        tabName: '商品1',
+        id: '1',
+        items: [
+          {
+            mid: '1',
+            title: '你就是',
+            price: '323',
+            originPrice: '389',
+            num: 0
+          },
+          {
+            mid: '2',
+            title:
+              '回家快回32ds回家快，家快回家快回家客户问问问回家快回家客户问问问',
+            price: '3233',
+            originPrice: '3893',
+            num: '32'
+          },
+          {
+            mid: '3',
+            title: '列为 u 问问',
+            price: '99',
+            originPrice: '',
+            num: '323434'
+          },
+          {
+            mid: '4',
+            title: '¥的事的吗器来了我ndskew34么',
+            price: '90',
+            originPrice: '123',
+            num: '32233'
+          },
+          {
+            mid: '5',
+            title: 'fdfhdfhkyGUkdsi',
+            price: '13',
+            originPrice: '23',
+            num: '1323333333'
+          }
+        ]
+      },
+      {
+        tabName: '商品2',
+        id: '2',
+        items: [
+          {
+            mid: '1',
+            title: '你就是',
+            price: '323',
+            originPrice: '389',
+            num: '13233'
+          },
+          {
+            mid: '2',
+            title:
+              '回家快回32ds回家快，家快回家快回家客户问问问回家快回家客户问问问',
+            price: '3233',
+            originPrice: '3893',
+            num: '32'
+          },
+          {
+            mid: '3',
+            title: '列为 u 问问',
+            price: '99',
+            originPrice: '',
+            num: '323434'
+          },
+          {
+            mid: '4',
+            title: '¥的事的吗器来了我ndskew34么',
+            price: '90',
+            originPrice: '123',
+            num: '32233'
+          },
+          {
+            mid: '5',
+            title: 'fdfhdfhkyGUkdsi',
+            price: '13',
+            originPrice: '23',
+            num: '1323333333'
+          }
+        ]
+      },
+      {
+        tabName: '商品3',
+        id: '3',
+        items: [
+          {
+            mid: '1',
+            title: '你就是',
+            price: '323',
+            originPrice: '389',
+            num: '13233'
+          },
+          {
+            mid: '2',
+            title:
+              '回家快回32ds回家快，家快回家快回家客户问问问回家快回家客户问问问',
+            price: '3233',
+            originPrice: '3893',
+            num: '32'
+          },
+          {
+            mid: '3',
+            title: '列为 u 问问',
+            price: '99',
+            originPrice: '',
+            num: '323434'
+          },
+          {
+            mid: '4',
+            title: '¥的事的吗器来了我ndskew34么',
+            price: '90',
+            originPrice: '123',
+            num: '32233'
+          },
+          {
+            mid: '5',
+            title: 'fdfhdfhkyGUkdsi',
+            price: '13',
+            originPrice: '23',
+            num: '1323333333'
+          }
+        ]
+      },
+      {
+        tabName: '商品4',
+        id: '4',
+        items: [
+          {
+            mid: '1',
+            title: '你就是',
+            price: '323',
+            originPrice: '389',
+            num: '13233'
+          },
+          {
+            mid: '2',
+            title:
+              '回家快回32ds回家快，家快回家快回家客户问问问回家快回家客户问问问',
+            price: '3233',
+            originPrice: '3893',
+            num: '32'
+          },
+          {
+            mid: '3',
+            title: '列为 u 问问',
+            price: '99',
+            originPrice: '',
+            num: '323434'
+          },
+          {
+            mid: '4',
+            title: '¥的事的吗器来了我ndskew34么',
+            price: '90',
+            originPrice: '123',
+            num: '32233'
+          },
+          {
+            mid: '5',
+            title: 'fdfhdfhkyGUkdsi',
+            price: '13',
+            originPrice: '23',
+            num: '1323333333'
+          }
+        ]
+      }
+    ],
+    test: [],
+    active: 0
   },
 
   onLoad: function() {

@@ -44,13 +44,32 @@
 
     <!-- tab商品区 -->
     <view class="ly-home-main-tab-wrap">
-      <van-tabs active="{{ active }}" bind:change="onChange">
-        <van-tab title="标签 1">内容 1</van-tab>
-        <van-tab title="标签 2">内容 2</van-tab>
-        <van-tab title="标签 3">内容 3</van-tab>
-        <van-tab title="标签 4">内容 4</van-tab>
-        <van-tab title="标签 5">内容 5</van-tab>
-        <van-tab title="标签 6">内容 6</van-tab>
+      <van-tabs 
+        active="{{ active }}"
+        border="{{false}}" 
+        bind:change="onChange" 
+      >
+        <van-tab
+          wx:for="{{tabList}}" 
+          wx::key="*this"
+          wx:for-item="list"
+          title="{{list.tabName}}"
+        >
+          <view class="ly-home-main-tab-card-wrap">
+            <block 
+              wx:for="{{list.items}}"
+              wx:for-item="item"
+              wx::key="*this">
+              <ly-card
+                class="ly-home-main-tab-card"
+                title="{{item.title}}"
+                num="{{item.num}}"
+                price="{{item.price}}"
+                origin-price="{{item.originPrice}}"
+              />
+            </block>
+          </view>
+        </van-tab>
       </van-tabs>
     </view>
   </view>
