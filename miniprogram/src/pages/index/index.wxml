@@ -9,7 +9,6 @@
       placeholder="搜索你要的商品"
     />
   </view>
-
   <!-- 轮播图 -->
   <view class="ly-home-swiper">
     <swiper 

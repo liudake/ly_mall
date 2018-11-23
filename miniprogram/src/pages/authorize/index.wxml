@@ -1,0 +1,16 @@
+<view class="container-view" wx:if="{{canIUse}}">
+    <view class='auth-header-img'>
+        <image src='/common/images/home@2x.png'></image>
+    </view>
+
+    <view class='auth-content'>
+        <text class="auth-content-font">申请获取以下权限</text>
+        <text>获得你的公开信息(<text class="auth-content-pink">昵称，头像等</text>)</text>
+    </view>
+
+    <button class='auth-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">
+        授权登录
+    </button>
+</view>
+
+<view wx:else>请升级微信版本</view>
