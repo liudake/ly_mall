@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/authorize/index",
+    "pages/index/index",
     "pages/me/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -10,11 +12,13 @@
     "pages/index/index"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f44336",
+    "backgroundColor": "#eeeeee",
+    "backgroundColorTop": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f44",
     "navigationBarTitleText": "亮源商城",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "selectedColor": "#000",
