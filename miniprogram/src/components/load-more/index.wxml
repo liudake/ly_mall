@@ -1,0 +1,8 @@
+<view class="ly-load-more" wx:if="{{hasMore}}">
+  <image 
+    class="ly-load-more-icon {{showIcon?'active':''}}"
+    src="./loading.png"
+    hidden="{{!showIcon}}"
+  />
+  <text class="ly-load-more-text">{{text}}</text>
+</view>

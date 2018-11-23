@@ -5,6 +5,13 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+.ly-home-search {
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.ly-home-search .van-cell {
+  border-radius: 32rpx;
+  background-color: #f2f2f2;
+}
 .ly-home-swiper {
   padding: 8px;
   border-bottom: 1rpx solid #f3f3f3;
@@ -33,7 +40,7 @@ page {
 }
 .ly-home-main {
   margin-top: 10px;
-  background-color: #f3f3f3;
+  background-color: #f6f6f6;
 }
 .ly-home-main-mall-scroll {
   overflow: hidden;
@@ -64,7 +71,7 @@ page {
   color: #F44336;
   font-size: 14px;
 }
-.ly-home-main-mall-price-initia {
+.ly-home-main-mall-price-origin {
   color: #ababab;
   margin-left: 6px;
   text-decoration: line-through;
