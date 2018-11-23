@@ -1,7 +1,7 @@
 <view>
   <view class="header">
     <image class="circle" src="https://avatars1.githubusercontent.com/u/19321222?s=60&v=4"></image>
-    <text>hhs</text>
+    <text class="me-name-txt">{{name}}</text>
   </view>
   <view class="tab-wr">
     <text>购物车</text>

@@ -12,6 +12,7 @@
 	"appid": "wx057df5f9f2a4c459",
 	"projectname": "ly_mall",
 	"libVersion": "2.2.5",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,

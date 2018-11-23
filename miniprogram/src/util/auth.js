@@ -1,4 +1,4 @@
-let Auth = {
+ Auth = {
   // 云开发版本提示
   versionTip: function() {
     if (!wx.cloud) {
@@ -23,8 +23,8 @@ let Auth = {
               wx.getUserInfo({
                 success: res => {
                   console.log(res);
-                  wx.switchTab({
-                    url: '/pages/index/index'
+                  wx.navigateTo({
+                    url: '/pages/authorize/index'
                   })
                 }
               })
@@ -34,7 +34,7 @@ let Auth = {
           wx.getUserInfo({
             success: res => {
               console.log(res);
-              wx.switchTab({
+              wx.navigateTo({
                 url: '/pages/index/index'
               })
             }

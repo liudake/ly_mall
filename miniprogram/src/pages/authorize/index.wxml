@@ -1,4 +1,4 @@
-<view class="container-view" wx:if="{{canIUse}}">
+<view class="container-view" wx:if="{{canIUse &&  loader}}">
     <view class='auth-header-img'>
         <image src='/common/images/home@2x.png'></image>
     </view>
@@ -12,5 +12,3 @@
         授权登录
     </button>
 </view>
-
-<view wx:else>请升级微信版本</view>

@@ -14,6 +14,11 @@
   height: 120rpx;
   border-radius: 50%;
 }
+.me-name-txt {
+  margin: 20rpx;
+  font-size: 14px;
+  color: #fff;
+}
 .tab-wr {
   display: flex;
   justify-content: space-around;

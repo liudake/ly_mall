@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loader: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
@@ -77,22 +78,25 @@ Page({
               // 获取用户信息
               wx.getUserInfo({
                 success: res => {
-                  console.log(res);
+                  that.setData({
+                    loader: true
+                  });
+                  app.globalData.userInfo = res.userInfo;
                   that.onTrun();
                 }
-              })
+              });
             }
           })
         } else {
           wx.getUserInfo({
             success: res => {
-              console.log(res);
+              app.globalData.userInfo = res.userInfo;
               that.onTrun();
             }
-          })
+          });
         }
       }
-    })
+    });
   },
   onTrun: function() {
     wx.switchTab({
