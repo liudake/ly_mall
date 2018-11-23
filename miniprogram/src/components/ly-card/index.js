@@ -1,4 +1,5 @@
 import { VantComponent } from '../../static/js/vant-weapp/dist/common/component';
+
 VantComponent({
   classes: ['num-class', 'thumb-class', 'title-class', 'price-class', 'origin-price-class'],
   props: {

@@ -4,8 +4,9 @@
   <view class="ly-home-search">
     <van-search
       value="{{ value }}" 
+      background="#fff"
       input-align="center"
-      placeholder="搜索你要的商品" 
+      placeholder="搜索你要的商品"
     />
   </view>
 
@@ -16,7 +17,7 @@
       autoplay="{{true}}"
       circular="{{true}}"
     >
-      <block wx:for="{{background}}" wx::key="*this">
+      <block wx:for="{{background}}" wx:key="index">
         <swiper-item>
           <view class="ly-home-swiper-item ly-home-swiper-item-{{item}}"></view>
         </swiper-item>
@@ -30,12 +31,12 @@
     <van-panel title="热销榜" desc="每日热销指南">
       <view class="ly-home-main-mall">
         <scroll-view class="ly-home-main-mall-scroll" scroll-x style="width: 100%">
-          <view class="ly-home-main-mall-wrap" wx:for="{{mallList}}" wx::key="*this">
+          <view class="ly-home-main-mall-wrap" wx:for="{{mallList}}" wx:key="index">
             <image class="ly-home-main-mall-img" mode="{{item.mode}}" src="{{item.src}}"></image>
             <view class="ly-home-main-mall-name">{{item.name}}</view>
             <view class="ly-home-main-mall-price text-center">
               <text class="ly-home-main-mall-price-text">¥{{item.price}}</text>
-              <text class="ly-home-main-mall-price-initia">¥{{item.initialPrice}}</text>
+              <text class="ly-home-main-mall-price-origin">¥{{item.originPrice}}</text>
             </view>
           </view>
         </scroll-view>
@@ -45,33 +46,41 @@
     <!-- tab商品区 -->
     <view class="ly-home-main-tab-wrap">
       <van-tabs 
-        active="{{ active }}"
+        active="{{active}}"
         border="{{false}}" 
-        bind:change="onChange" 
+        bind:change="onTabChange" 
       >
         <van-tab
           wx:for="{{tabList}}" 
-          wx::key="*this"
           wx:for-item="list"
-          title="{{list.tabName}}"
+          wx:for-index="idx"
+          wx:key="idx"
+          title="{{list.label}}"
         >
-          <view class="ly-home-main-tab-card-wrap">
-            <block 
-              wx:for="{{list.items}}"
-              wx:for-item="item"
-              wx::key="*this">
-              <ly-card
-                class="ly-home-main-tab-card"
-                title="{{item.title}}"
-                num="{{item.num}}"
-                price="{{item.price}}"
-                origin-price="{{item.originPrice}}"
-              />
-            </block>
-          </view>
+            <view class="ly-home-main-tab-card-wrap">
+              <block 
+                wx:for="{{tabLists}}"
+                wx:for-item="item"
+                wx:key="index">
+                <ly-card
+                  class="ly-home-main-tab-card"
+                  title="{{item.productName}}"
+                  num="{{item.appointmentStatusName}}"
+                  price="{{item.appointmentStatusName}}"
+                  origin-price="{{item.appointmentStatusName}}"
+                  thumb="{{item.thumb}}"
+                />
+              </block>
+            </view>
+          
         </van-tab>
       </van-tabs>
     </view>
   </view>
-
+  <!-- 底部上拉加载更多区 -->
+  <load-more 
+    id="loadMoreView"
+    bindloadMoreListener='loadMoreListener'
+    bindclickLoadMore='clickLoadMore'
+  ></load-more>
 </view>

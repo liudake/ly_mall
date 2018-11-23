@@ -3,7 +3,8 @@
     <view class="ly-card-img-wrap">
       <image
         class="ly-card-thumb"
-        src="http://img3.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=26&gp=0.jpg"
+        src="{{thumb}}"
+        mode="{{thumbMode}}"
       ></image>
     </view>
     <view class="ly-card-info">
