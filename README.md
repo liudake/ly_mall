@@ -1,3 +1,17 @@
+### 项目结构
+```
+src
+    api -- http请求相关封装，例如请求路径、请求状态处理
+    common -- 公共部分，包括css基础样式、image......
+    components -- 公共组件
+    pages -- 界面
+    service -- 请求层
+    statice -- 第三方插件
+```
+
+
+
+
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
