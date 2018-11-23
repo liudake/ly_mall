@@ -8,16 +8,15 @@
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/index/index"
+    "pages/chooseLib/chooseLib"
   ],
   "window": {
     "backgroundColor": "#eeeeee",
     "backgroundColorTop": "#eeeeee",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#f44",
-    "navigationBarTitleText": "亮源商城",
-    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#d50000",
+    "navigationBarTitleText": "mall商城",
+    "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
   },
   "tabBar": {
