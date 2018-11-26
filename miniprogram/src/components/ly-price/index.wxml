@@ -1,0 +1,12 @@
+<view class="ly-price" style="text-align:{{aligns}};">
+  <text
+    wx:if="{{ price || price === 0 }}"
+    class="ly-price-new price-new-class"
+    style="font-size:{{ priceSize }}rpx;"
+    >{{ currency }} {{ price }}</text>
+  <text
+    wx:if="{{ originPrice || originPrice === 0 }}"
+    class="ly-price-origin price-origin-class"
+    style="font-size:{{ originPriceSize }}rpx;"
+    >{{ currency }} {{ originPrice }}</text>
+</view>

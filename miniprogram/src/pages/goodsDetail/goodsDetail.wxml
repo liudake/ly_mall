@@ -1,0 +1,109 @@
+<view class="ly-goods-detail">
+  <view class="ly-goods-detail-main">
+    <!-- 轮播区 -->
+    <view class="ly-goods-detail-slider-wrap">
+      <swiper
+        class="ly-goods-detail-slider" 
+        indicator-dots="{{true}}"
+        circular="{{true}}"
+      >
+        <block wx:for="{{goodsDetail.sliderImgUrls}}" wx:key="index">
+          <swiper-item item-id="{{item.itemId}}">
+            <image 
+              class="ly-goods-detail-slider-image" 
+              src="{{item.src}}" 
+            />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  
+    <!-- 详情描述区 -->
+    <view class="ly-goods-detail-info">
+      <view class="ly-goods-detail-info-name bold">
+        <view class="ly-goods-detail-info-title">{{goodsDetail.title}}</view>
+        <view class="ly-goods-detail-info-share">
+          <icon type="download"></icon>
+          <text class="ly-goods-detail-info-share-text">分享</text>
+        </view>
+      </view>
+      <view class="ly-goods-detail-info-desc">{{goodsDetail.desc}}</view>
+      <ly-price 
+        price="{{goodsDetail.price}}"
+        origin-price="{{goodsDetail.originPrice}}"
+        price-size="40"
+        origin-price-size="24"
+      >
+      </ly-price>
+      <van-cell-group
+      >
+        <van-cell
+          border="{{false}}"
+          is-link
+        >
+          <view slot="title">
+            {{goodsDetail.tagList}}
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </view>
+  
+    <!-- 商品详情-富文本区 -->
+    <view class="ly-goods-detail-content-wrap">
+      <view class="ly-goods-detail-content-panel bold">商品详情</view>
+      <view class="ly-goods-detail-content-introduce">
+        <rich-text nodes="{{goodsDetail.goodsContent}}"></rich-text>
+      </view>
+    </view>
+
+    <!-- 猜你喜欢商品区 -->
+    <view class="ly-goods-detail-guess">
+      <view class="ly-goods-detail-content-panel bold">猜你喜欢</view>
+      <view class="ly-goods-detail-guess-card-wrap">
+        <block wx:for="{{guessList}}">
+          <ly-card
+            class="ly-goods-detail-guess-card"
+            id="{{item.mid}}"
+            title="{{item.title}}"
+            price="{{item.price}}"
+            origin-price="{{item.originPrice}}"
+            num="{{item.num}}"
+            thumb="{{item.thumb}}"
+          />
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品详情-底部商品导航栏 -->
+  <view class="ly-goods-detail-submit-wrap">
+    <van-goods-action>
+      <van-goods-action-icon
+        icon="chat"
+        text="首页"
+        bind:click="onClickHome"
+      />
+      <van-goods-action-icon
+        icon="chat"
+        text="客服"
+        bind:click="onClickIcon"
+      />
+      <van-goods-action-icon
+        icon="cart"
+        text="购物车"
+        info="11"
+        bind:click="onClickIcon"
+      />
+      <van-goods-action-button
+        text="加入购物车"
+        type="warning"
+        bind:click="onClickButton"
+      />
+      <van-goods-action-button
+        text="立即购买"
+        bind:click="onClickButton"
+      />
+    </van-goods-action>
+  </view>
+</view>
+

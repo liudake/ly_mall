@@ -64,19 +64,6 @@ page {
   font-size: 13px;
   color: #232326;
 }
-.ly-home-main-mall-price {
-  margin-top: 5px;
-}
-.ly-home-main-mall-price-text {
-  color: #F44336;
-  font-size: 14px;
-}
-.ly-home-main-mall-price-origin {
-  color: #ababab;
-  margin-left: 6px;
-  text-decoration: line-through;
-  font-size: 10px;
-}
 .ly-home-main-tab-wrap {
   margin-top: 10px;
 }

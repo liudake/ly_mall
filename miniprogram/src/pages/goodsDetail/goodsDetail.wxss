@@ -1,0 +1,79 @@
+.ly-goods-detail-main {
+  margin-bottom: 50px;
+}
+.ly-goods-detail-slider {
+  height: 750rpx;
+}
+.ly-goods-detail-slider-image {
+  width: 750rpx;
+  height: 750rpx;
+}
+.ly-goods-detail-slider-wrap {
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.ly-goods-detail-info {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+}
+.ly-goods-detail-info-name {
+  display: flex;
+  margin-bottom: 4px;
+}
+.ly-goods-detail-info-title {
+  padding-right: 4px;
+}
+.ly-goods-detail-info-share {
+  text-align: center;
+  flex: 0 0 100rpx;
+}
+.ly-goods-detail-info-share:before {
+  content: '';
+  border-left: 1rpx solid #f3f3f3;
+}
+.ly-goods-detail-info-share-text {
+  display: block;
+  font-size: 20rpx;
+  color: #989898;
+}
+.ly-goods-detail-info-desc {
+  font-size: 26rpx;
+  color: #989898;
+  margin-bottom: 4px;
+}
+.ly-goods-detail-content-panel {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 10px;
+  border-bottom: 1rpx solid #f3f3f3;
+  background-color: #fff;
+}
+.ly-goods-detail-content-introduce {
+  padding: 12px 10px 10px 10px;
+  position: relative;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  text-align: justify;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.ly-goods-detail-guess-card {
+  flex: 0 0 50%;
+  position: relative;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+}
+.ly-goods-detail-guess-card:nth-child(2n) {
+  padding-left: 2px;
+  padding-right: 4px;
+}
+.ly-goods-detail-guess-card:nth-child(2n + 1) {
+  padding-left: 4px;
+  padding-right: 2px;
+}
+.ly-goods-detail-guess-card-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}

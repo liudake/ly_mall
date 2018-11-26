@@ -40,9 +40,7 @@ textarea {
   clear: both;
   visibility: hidden;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+page {
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  font-size: 28rpx;
 }

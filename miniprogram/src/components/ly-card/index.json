@@ -1,3 +1,6 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "ly-price": "../components/ly-price/index"
+  }
 }

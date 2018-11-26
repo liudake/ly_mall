@@ -33,10 +33,7 @@
           <view class="ly-home-main-mall-wrap" wx:for="{{mallList}}" wx:key="index">
             <image class="ly-home-main-mall-img" mode="{{item.mode}}" src="{{item.src}}"></image>
             <view class="ly-home-main-mall-name">{{item.name}}</view>
-            <view class="ly-home-main-mall-price text-center">
-              <text class="ly-home-main-mall-price-text">¥{{item.price}}</text>
-              <text class="ly-home-main-mall-price-origin">¥{{item.originPrice}}</text>
-            </view>
+            <ly-price aligns="center" price="{{item.price}}" origin-price="{{item.originPrice}}"></ly-price>
           </view>
         </scroll-view>
       </view>
@@ -63,6 +60,7 @@
                 wx:key="index">
                 <ly-card
                   class="ly-home-main-tab-card"
+                  pid="{{item.productId}}"
                   title="{{item.productName}}"
                   num="{{item.appointmentStatusName}}"
                   price="{{item.appointmentStatusName}}"

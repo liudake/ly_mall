@@ -1,0 +1,13 @@
+  <view class="ly-panel panel-class">
+    <view class="ly-panel__header panel-header-class">
+      <view class="ly-panel__left bold" wx:if="{{title}}">{{title}}</view>
+      <div class="ly-panel__right" 
+        wx:if="{{isLink}}"
+        bind:tag="onClickRight"
+      >
+        <text class="ly-panel__right__value" wx:if="value">{{value}}</text>
+      </div>
+    </view>
+    <slot/>
+  </view>
+  

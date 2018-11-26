@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "backgroundColor": "#f6f6f6",
+  "usingComponents": {
+    "ly-price": "../../components/ly-price/index",
+    "ly-card": "../../components/ly-card/index",
+    "van-cell": "../../static/js/vant-weapp/dist/cell/index",
+    "van-cell-group": "../../static/js/vant-weapp/dist/cell-group/index",
+    "van-goods-action": "../../static/js/vant-weapp/dist/goods-action/index",
+    "van-goods-action-icon": "../../static/js/vant-weapp/dist/goods-action-icon/index",
+    "van-goods-action-button": "../../static/js/vant-weapp/dist/goods-action-button/index"
+  }
+}

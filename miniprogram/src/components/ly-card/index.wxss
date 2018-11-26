@@ -23,21 +23,11 @@
   /*! autoprefixer: off */
   -webkit-box-orient: vertical;
 }
-.ly-card-info-price {
+.ly-card-info-desc {
   position: relative;
   padding: 0 4px;
 }
-.ly-card-info-price-text {
-  color: #F44336;
-  font-size: 14px;
-}
-.ly-card-info-price-origin {
-  color: #ababab;
-  margin-left: 6px;
-  text-decoration: line-through;
-  font-size: 10px;
-}
-.ly-card-info-price-num {
+.ly-card-info-desc-num {
   position: absolute;
   top: 0;
   right: 4px;

@@ -1,0 +1,19 @@
+.ly-panel {
+  position: relative;
+  margin-bottom: 10px;
+}
+.ly-panel__header {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 12px;
+  border-bottom: 1rpx solid #f3f3f3;
+  background-color: #fff;
+}
+.ly-panel__left {
+  font-size: 30rpx;
+}
+.ly-panel__right {
+  position: absolute;
+  top: 0;
+  right: 32rpx;
+}

@@ -1,8 +1,8 @@
-import { VantComponent } from '../../static/js/vant-weapp/dist/common/component';
+Component({
+  externalClasses: ['ly-card-class'],
 
-VantComponent({
-  classes: ['num-class', 'thumb-class', 'title-class', 'price-class', 'origin-price-class'],
-  props: {
+  properties: {
+    pid: String,
     num: Number,
     thumb: String,
     title: String,
@@ -14,9 +14,15 @@ VantComponent({
       value: 'scaleToFill'
     }
   },
+
   methods: {
-    onClickThumb: function onClickThumb() {
-      this.jumpLink('thumbLink');
+    onClickLink() {
+      //  业务组件 在内部实现跳转商品详情页面
+      console.log('id', this.properties.pid);
+      wx.navigateTo({
+        url: `../../pages/goodsDetail/goodsDetail?id=${this.properties.pid}`
+      });
+      this.triggerEvent('onClickLink');
     }
   }
 });

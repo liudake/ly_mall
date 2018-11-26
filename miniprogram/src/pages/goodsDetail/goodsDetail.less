@@ -1,0 +1,95 @@
+@import '../../common/css/variable.less';
+@import '../../common/css/mixin.less';
+
+.ly-goods-detail {
+  &-main {
+    margin-bottom: 50px;
+  }
+
+  &-slider {
+    height: 750rpx;
+    &-image {
+      width: 750rpx;
+      height: 750rpx;
+    }
+    &-wrap {
+      border-bottom: 1rpx solid @color-border-1px;
+    }
+  }
+  &-info {
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    &-name {
+      display: flex;
+      margin-bottom: 4px;
+    }
+    &-title {
+      padding-right: 4px;
+    }
+    &-share {
+      text-align: center;
+      flex: 0 0 100rpx;
+      &:before {
+        content: '';
+        // padding: 0 20rpx;
+        border-left: 1rpx solid @color-border-1px;
+      }
+      &-text {
+        display: block;
+        font-size: 20rpx;
+        color: @color-text-gray;
+      }
+    }
+    &-desc {
+      font-size: 26rpx;
+      color: @color-text-gray;
+      margin-bottom: 4px;
+    }
+  }
+
+  &-content {
+    &-wrap {
+      // margin-bottom: -50px;
+    }
+    &-panel {
+      height: 88rpx;
+      line-height: 88rpx;
+      padding: 0 10px;
+      border-bottom: 1rpx solid @color-border-1px;
+      background-color: @color-background;
+    }
+    &-introduce {
+      padding: 12px 10px 10px 10px;
+      position: relative;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-align: justify;
+      box-sizing: border-box;
+      background-color: @color-background;
+    }
+  }
+
+  &-guess {
+    &-card {
+      flex: 0 0 50%;
+      position: relative;
+      padding-bottom: 4px;
+      box-sizing: border-box;
+      &:nth-child(2n) {
+        padding-left: 2px;
+        padding-right: 4px;
+      }
+      &:nth-child(2n + 1) {
+        padding-left: 4px;
+        padding-right: 2px;
+      }
+      &-wrap {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+      }
+    }
+  }
+}
