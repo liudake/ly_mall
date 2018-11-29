@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "购物车",
+  "backgroundColor": "#f6f6f6",
+  "usingComponents": {
+    "van-card": "../../static/js/vant-weapp/dist/card/index",
+    "van-stepper": "../../static/js/vant-weapp/dist/stepper/index",
+    "van-submit-bar": "../../static/js/vant-weapp/dist/submit-bar/index",
+    "van-checkbox": "../../static/js/vant-weapp/dist/checkbox/index",
+    "van-checkbox-group": "../../static/js/vant-weapp/dist/checkbox-group/index"
+  }
+}

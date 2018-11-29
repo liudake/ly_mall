@@ -23,7 +23,7 @@
       </block>
     </swiper>
   </view>
-
+  
   <!-- 商品区 -->
   <view class="ly-home-main">
     <!-- 热门商品区 -->

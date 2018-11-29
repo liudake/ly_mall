@@ -1,3 +1,6 @@
+.ly-goods-detail {
+  background-color: #f6f6f6;
+}
 .ly-goods-detail-main {
   margin-bottom: 50px;
 }
@@ -12,8 +15,9 @@
   border-bottom: 1rpx solid #f3f3f3;
 }
 .ly-goods-detail-info {
-  padding: 12px 10px;
+  padding: 12px 10px 0 10px;
   margin-bottom: 10px;
+  background-color: #fff;
 }
 .ly-goods-detail-info-name {
   display: flex;
@@ -40,13 +44,6 @@
   color: #989898;
   margin-bottom: 4px;
 }
-.ly-goods-detail-content-panel {
-  height: 88rpx;
-  line-height: 88rpx;
-  padding: 0 10px;
-  border-bottom: 1rpx solid #f3f3f3;
-  background-color: #fff;
-}
 .ly-goods-detail-content-introduce {
   padding: 12px 10px 10px 10px;
   position: relative;
@@ -57,6 +54,9 @@
   text-align: justify;
   box-sizing: border-box;
   background-color: #fff;
+}
+.ly-goods-detail-guess .paenl-guess {
+  margin-bottom: 0;
 }
 .ly-goods-detail-guess-card {
   flex: 0 0 50%;
@@ -76,4 +76,125 @@
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
+  padding-top: 4px;
+}
+.ly-goods-detail-sku-popup {
+  overflow-y: visible !important;
+  max-height: max-content !important;
+  background: #fff;
+}
+.ly-goods-detail-sku-header {
+  position: relative;
+  margin-left: 15px;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.ly-goods-detail-sku-header__img-wrap {
+  position: relative;
+  float: left;
+  margin-top: -10px;
+  width: 160rpx;
+  height: 160rpx;
+  background: #f6f6f6;
+  border-radius: 4rpx;
+}
+.ly-goods-detail-sku-header__img-wrap > image {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+.ly-goods-detail-sku-header__goods-info {
+  padding: 10px 60px 10px 10px;
+  min-height: 164rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.ly-goods-detail-sku-header__goods-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.ly-goods-detail-sku-header__goods-icon {
+  position: absolute !important;
+  top: 10px;
+  right: 15px;
+  color: #969799;
+  text-align: center;
+}
+.ly-goods-detail-sku-body {
+  max-height: 700rpx;
+}
+.ly-goods-detail-sku-group-container {
+  margin-left: 15px;
+  padding: 12px 0 2px;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.ly-goods-detail-sku-row {
+  margin: 0 15px 10px 0;
+}
+.ly-goods-detail-sku-row__title {
+  padding-bottom: 10px;
+}
+.ly-goods-detail-sku-row__item {
+  display: inline-block;
+  padding: 5px 9px;
+  margin: 0 10px 10px 0;
+  height: 54rpx;
+  min-width: 104rpx;
+  line-height: 32rpx;
+  font-size: 12px;
+  color: #3A3A3A;
+  text-align: center;
+  border: 1px solid #989898;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+.ly-goods-detail-sku-row__item--active {
+  color: #fff;
+  border-color: #F44336;
+  background: #F44336;
+}
+.ly-goods-detail-sku-stepper-stock {
+  margin-left: 15px;
+  padding: 12px 0;
+}
+.ly-goods-detail-sku-stepper-container {
+  height: 60rpx;
+  margin-right: 20px;
+}
+.ly-goods-detail-sku-stepper-title {
+  float: left;
+  line-height: 60rpx;
+}
+.ly-goods-detail-sku__stepper {
+  float: right;
+}
+.ly-goods-detail-sku__stock {
+  display: inline-block;
+  margin-right: 10px;
+  color: #989898;
+  font-size: 24rpx;
+}
+.ly-goods-detail-tips-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 32rpx 60rpx;
+  color: #989898;
+  box-sizing: border-box;
+}
+.ly-goods-detail-tips-cell {
+  flex: 1;
+  border-top: 1px solid #989898;
+}
+.ly-goods-detail-tips-text {
+  padding: 0 10px;
 }

@@ -1,0 +1,9 @@
+    <view 
+      class="ly-tops tops-class" 
+      bind:tap="clickTop" 
+      hidden="{{scrollTop <= scrollHeight}}"
+    >
+      <van-icon size="1.5em" custom-class="ly-tops-icon" name="upgrade" />
+      <text class="ly-tops-text">{{text}}</text>
+    </view>
+  

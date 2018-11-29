@@ -2,6 +2,7 @@
 @import '../../common/css/mixin.less';
 
 .ly-goods-detail {
+  background-color: @color-background-f6;
   &-main {
     margin-bottom: 50px;
   }
@@ -16,9 +17,11 @@
       border-bottom: 1rpx solid @color-border-1px;
     }
   }
+
   &-info {
-    padding: 12px 10px;
+    padding: 12px 10px 0 10px;
     margin-bottom: 10px;
+    background-color: @color-background;
     &-name {
       display: flex;
       margin-bottom: 4px;
@@ -49,14 +52,6 @@
 
   &-content {
     &-wrap {
-      // margin-bottom: -50px;
-    }
-    &-panel {
-      height: 88rpx;
-      line-height: 88rpx;
-      padding: 0 10px;
-      border-bottom: 1rpx solid @color-border-1px;
-      background-color: @color-background;
     }
     &-introduce {
       padding: 12px 10px 10px 10px;
@@ -72,6 +67,9 @@
   }
 
   &-guess {
+    .paenl-guess {
+      margin-bottom: 0;
+    }
     &-card {
       flex: 0 0 50%;
       position: relative;
@@ -89,7 +87,135 @@
         display: flex;
         flex-flow: row wrap;
         align-content: flex-start;
+        padding-top: 4px;
       }
+    }
+  }
+
+  &-sku {
+    &-popup {
+      overflow-y: visible !important;
+      max-height: max-content !important;
+      background: @color-background;
+    }
+    &-header {
+      position: relative;
+      margin-left: 15px;
+      border-bottom: 1rpx solid @color-border-1px;
+      &__img-wrap {
+        position: relative;
+        float: left;
+        margin-top: -10px;
+        width: 160rpx;
+        height: 160rpx;
+        background: @color-background-f6;
+        border-radius: 4rpx;
+        > image {
+          position: absolute;
+          margin: auto;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: inherit;
+          height: inherit;
+          border-radius: inherit;
+        }
+      }
+      &__goods {
+        &-info {
+          padding: 10px 60px 10px 10px;
+          min-height: 164rpx;
+          overflow: hidden;
+          box-sizing: border-box;
+        }
+        &-name {
+          .no-wrap(2);
+        }
+        &-icon {
+          position: absolute !important;
+          top: 10px;
+          right: 15px;
+          color: #969799;
+          text-align: center;
+        }
+      }
+    }
+    &-body {
+      max-height: 700rpx;
+    }
+    &-group-container {
+      margin-left: 15px;
+      padding: 12px 0 2px;
+      border-bottom: 1rpx solid @color-border-1px;
+    }
+    &-row {
+      margin: 0 15px 10px 0;
+      &__title {
+        padding-bottom: 10px;
+      }
+      &__item {
+        display: inline-block;
+        padding: 5px 9px;
+        margin: 0 10px 10px 0;
+        height: 54rpx;
+        min-width: 104rpx;
+        line-height: 32rpx;
+        font-size: 12px;
+        color: @color-text-three;
+        text-align: center;
+        border: 1px solid @color-text-gray;
+        border-radius: 6rpx;
+        box-sizing: border-box;
+        &--active {
+          color: @color-text-white;
+          border-color: @color-text-red;
+          background: @color-text-red;
+        }
+      }
+    }
+    &-stepper {
+      &-stock {
+        margin-left: 15px;
+        padding: 12px 0;
+      }
+      &-container {
+        height: 60rpx;
+        margin-right: 20px;
+      }
+      &-title {
+        float: left;
+        line-height: 60rpx;
+      }
+    }
+    &__stepper {
+      float: right;
+    }
+    &__stock {
+      display: inline-block;
+      margin-right: 10px;
+      color: @color-text-gray;
+      font-size: 24rpx;
+    }
+    &-footer {
+    }
+  }
+
+  &-tips {
+    &-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 32rpx 60rpx;
+      color: @color-text-gray;
+      box-sizing: border-box;
+    }
+    &-cell {
+      flex: 1;
+      border-top: 1px solid @color-text-gray;
+    }
+    &-text {
+      padding: 0 10px;
     }
   }
 }

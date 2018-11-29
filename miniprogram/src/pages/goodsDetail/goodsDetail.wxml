@@ -8,7 +8,12 @@
         circular="{{true}}"
       >
         <block wx:for="{{goodsDetail.sliderImgUrls}}" wx:key="index">
-          <swiper-item item-id="{{item.itemId}}">
+          <swiper-item 
+            item-id="{{item.itemId}}"
+            data-select-picture="{{item.src}}"
+            data-pictures="{{goodsDetail.sliderImgUrls}}"
+            bind:tap="onSelectSwiper"
+          >
             <image 
               class="ly-goods-detail-slider-image" 
               src="{{item.src}}" 
@@ -47,33 +52,125 @@
         </van-cell>
       </van-cell-group>
     </view>
-  
+
     <!-- 商品详情-富文本区 -->
     <view class="ly-goods-detail-content-wrap">
-      <view class="ly-goods-detail-content-panel bold">商品详情</view>
-      <view class="ly-goods-detail-content-introduce">
-        <rich-text nodes="{{goodsDetail.goodsContent}}"></rich-text>
-      </view>
+      <ly-panel title="商品详情">
+        <view class="ly-goods-detail-content-introduce">
+          <rich-text nodes="{{goodsDetail.goodsContent}}"></rich-text>
+        </view>
+      </ly-panel>
     </view>
-
+    
     <!-- 猜你喜欢商品区 -->
     <view class="ly-goods-detail-guess">
-      <view class="ly-goods-detail-content-panel bold">猜你喜欢</view>
-      <view class="ly-goods-detail-guess-card-wrap">
-        <block wx:for="{{guessList}}">
-          <ly-card
-            class="ly-goods-detail-guess-card"
-            id="{{item.mid}}"
-            title="{{item.title}}"
-            price="{{item.price}}"
-            origin-price="{{item.originPrice}}"
-            num="{{item.num}}"
-            thumb="{{item.thumb}}"
-          />
-        </block>
+      <ly-panel title="猜你喜欢" panel-class="paenl-guess">
+        <view class="ly-goods-detail-guess-card-wrap">
+          <block wx:for="{{guessList}}" wx:key="index">
+            <ly-card
+              class="ly-goods-detail-guess-card"
+              id="{{item.mid}}"
+              title="{{item.title}}"
+              price="{{item.price}}"
+              origin-price="{{item.originPrice}}"
+              num="{{item.num}}"
+              thumb="{{item.thumb}}"
+            />
+          </block>
+        </view>
+      </ly-panel>
+    </view>
+
+    <!-- 底部没有商品区 -->
+    <view class="ly-goods-detail-tips">
+      <view class="ly-goods-detail-tips-title align-center">
+        <view class="ly-goods-detail-tips-cell"/>
+        <text class="ly-goods-detail-tips-text">没有更多相似商品了</text>
+        <view class="ly-goods-detail-tips-cell"/>
       </view>
     </view>
   </view>
+
+  <!-- 右下角固定区 -->
+  <view class="ly-goods-detail-right-bottom">
+    <ly-tops scroll-top="{{scrollTop}}"></ly-tops>
+  </view>
+
+  <!-- 公用弹出层 -->
+  <van-popup
+    custom-class="ly-goods-detail-sku-popup" 
+    show="{{ buyModel }}" 
+    bind:close="onBuyHide"
+    position="bottom"
+  >
+    <view class="ly-goods-detail-sku-container">
+      <!-- 头部 -->
+      <view class="ly-goods-detail-sku-header">
+        <view class="ly-goods-detail-sku-header__img-wrap" data-picture="{{goodsDetail.picture}}" bind:tap="onSkuImg">
+          <image src="{{goodsDetail.picture}}"/>
+        </view>
+        <view class="ly-goods-detail-sku-header__goods-info">
+          <view class="ly-goods-detail-sku-header__goods-name">{{goodsDetail.title}}</view>
+          <ly-price 
+            price="{{goodsDetail.price}}"
+            origin-price="{{goodsDetail.originPrice}}"
+          />
+          <van-icon 
+            custom-class="ly-goods-detail-sku-header__goods-icon" 
+            name="close"
+            size="20px"
+            bind:click="onBuyHide"
+          />
+        </view>
+      </view>
+
+      <!-- 主要内容区 -->
+      <view class="ly-goods-detail-sku-body">
+        <view class="ly-goods-detail-sku-group-container" wx:if="{{sku.tree.length}}">
+          <block wx:for="{{sku.tree}}" wx:key="index">
+            <view class="ly-goods-detail-sku-row">
+              <view class="ly-goods-detail-sku-row__title">{{item.k}}</view>
+              <block 
+                wx:for="{{item.v}}" 
+                wx:for-item="list" 
+                wx:key="id"
+              >
+                <text 
+                  class="ly-goods-detail-sku-row__item {{actived === index && 'ly-goods-detail-sku-row__item--active'}}"
+                  data-item="{{list}}"
+                  data-index="{{index}}"
+                  bind:tap="onSelectSku">{{list.name}}</text>
+              </block>
+            </view>
+          </block>
+        </view>
+        <view class="ly-goods-detail-sku-stepper-stock">
+          <view class="ly-goods-detail-sku-stepper-container">
+            <view class="ly-goods-detail-sku-stepper-title">购买数量：</view>
+            <van-stepper 
+              custom-class="ly-goods-detail-sku__stepper"
+              value="{{1}}"
+              integer="{{true}}"
+              bind:change="onStepChange"
+            />
+          </view>
+          <view class="ly-goods-detail-sku__stock">
+            剩余{{sku.stock_num}}件
+          </view>
+        </view>
+      </view>
+
+      <!-- 底部 -->
+      <view class="ly-goods-detail-sku-footer">
+        <van-button 
+          type="danger" 
+          size="large" 
+          square
+          bind:click="onBuyHide"
+        >下一步</van-button>
+      </view>
+    </view>
+  </van-popup>
 
   <!-- 商品详情-底部商品导航栏 -->
   <view class="ly-goods-detail-submit-wrap">
@@ -86,7 +183,7 @@
       <van-goods-action-icon
         icon="chat"
         text="客服"
-        bind:click="onClickIcon"
+        open-type="contact"
       />
       <van-goods-action-icon
         icon="cart"
@@ -97,13 +194,14 @@
       <van-goods-action-button
         text="加入购物车"
         type="warning"
-        bind:click="onClickButton"
+        bind:click="onClickShopcart"
       />
       <van-goods-action-button
         text="立即购买"
-        bind:click="onClickButton"
+        bind:click="onClickBuy"
       />
     </van-goods-action>
   </view>
+
 </view>
 

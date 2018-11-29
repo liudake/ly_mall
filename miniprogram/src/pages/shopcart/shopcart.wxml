@@ -1,0 +1,64 @@
+<wxs module="price" src="./shopcart.wxs" />
+
+<view class="ly-shopcart">
+
+  <!-- 购物车卡片区 -->
+  <view class="ly-shopcart-card-wrap" wx:if="{{list && list.length}}">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <van-card
+        custom-class="ly-shopcart-card"
+        title="{{item.title}}"
+        desc="{{item.desc}}"
+        thumb="{{item.thumb}}"
+      >
+        <view slot="tags" class="ly-shopcart-card-checked">
+          <van-checkbox-group 
+            value="{{ result }}" 
+            data-id="{{item.mid}}" 
+            data-price="{{item.price}}" 
+            bind:change="onChangeCheck"
+          >
+            <van-checkbox
+              name="{{ item.mid }}"
+              checked-color="#F44336"
+            />
+          </van-checkbox-group>
+        </view>
+  
+        <view slot="footer" class="ly-shopcart-card-footer">
+          <view class="ly-shopcart-card-footer__price">¥{{item.price}}</view>
+          <van-stepper 
+            integer
+            value="{{item.num}}"
+            name="{{item.mid}}" 
+            max="{{item.maxNum}}"
+            data-index="{{index}}"
+            bind:change="onChangeCount" 
+          />
+        </view>
+      </van-card>
+    </block>
+  </view>
+
+  <view wx:else class="ly-shopcart-no-result">
+    购物车是空的
+  </view>
+
+  <!-- 底部提交订单区 -->
+  <view class="ly-shopcart-submit-wrap">
+    <van-submit-bar
+      custom-class="ly-shopcart-submit"
+      price="{{ total }}"
+      button-text="结算({{result.length}})"
+      catch:submit="onSubmit"
+    >
+      <van-checkbox
+        class="ly-shopcart-submit-chek"
+        value="{{checkedAll}}"
+        checked-color="#F44336"
+        bind:change="onChangeCheckAll"
+        >全选
+      </van-checkbox>
+    </van-submit-bar>
+  </view>
+</view>

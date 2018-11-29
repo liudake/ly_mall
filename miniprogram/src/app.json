@@ -9,7 +9,8 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/goodsDetail/goodsDetail"
+    "pages/goodsDetail/goodsDetail",
+    "pages/shopcart/shopcart"
   ],
   "window": {
     "backgroundColor": "#eeeeee",
@@ -34,7 +35,7 @@
       {
         "iconPath": "./common/images/shopping@2x.png",
         "selectedIconPath": "./common/images/shopping@2x.png",
-        "pagePath": "pages/databaseGuide/databaseGuide",
+        "pagePath": "pages/shopcart/shopcart",
         "text": "购物车"
       },
       {
@@ -46,6 +47,7 @@
     ]
   },
   "usingComponents": {
-    "van-button": "./static/js/vant-weapp/dist/button/index"
+    "van-button": "./static/js/vant-weapp/dist/button/index",
+    "van-icon": "./static/js/vant-weapp/dist/icon/index"
   }
 }

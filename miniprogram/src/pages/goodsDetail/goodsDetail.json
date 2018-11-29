@@ -1,10 +1,15 @@
 {
   "navigationBarTitleText": "商品详情",
   "backgroundColor": "#f6f6f6",
+  "disableScroll": false,
   "usingComponents": {
     "ly-price": "../../components/ly-price/index",
     "ly-card": "../../components/ly-card/index",
+    "ly-panel": "../../components/ly-panel/index",
+    "ly-tops": "../../components/ly-tops/index",
     "van-cell": "../../static/js/vant-weapp/dist/cell/index",
+    "van-popup": "../../static/js/vant-weapp/dist/popup/index",
+    "van-stepper": "../../static/js/vant-weapp/dist/stepper/index",
     "van-cell-group": "../../static/js/vant-weapp/dist/cell-group/index",
     "van-goods-action": "../../static/js/vant-weapp/dist/goods-action/index",
     "van-goods-action-icon": "../../static/js/vant-weapp/dist/goods-action-icon/index",

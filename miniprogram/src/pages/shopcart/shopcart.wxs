@@ -1,0 +1,13 @@
+var price = {
+  handlerPrice: function(price, num) {
+    var p = parseFloat(price);
+    var n = +num;
+    console.log('price', p, n);
+    var reuslt = (p * n && (p * n).toFixed(2)) || '0.00';
+    return reuslt;
+  }
+};
+
+module.exports = {
+  handlerPrice: price.handlerPrice
+};

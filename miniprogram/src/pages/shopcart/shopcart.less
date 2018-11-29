@@ -1,0 +1,58 @@
+@import '../../common/css/variable.less';
+
+.ly-shopcart {
+  margin-bottom: 50px;
+  background-color: @color-background-f6;
+  &-card {
+    border-radius: 10rpx;
+    background-color: @color-background !important;
+    padding-left: 150px !important;
+    margin-bottom: 10px;
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
+    &-wrap {
+      padding: 8px;
+
+      .van-card__thumb {
+        left: 45px;
+      }
+
+      .van-card__desc {
+        color: @color-text-gray;
+      }
+
+      .van-stepper__minus,
+      .van-stepper__plus {
+        width: 54rpx;
+        height: 54rpx;
+      }
+      .van-stepper__input {
+        width: 64rpx;
+        height: 46rpx;
+      }
+    }
+
+    &-checked {
+      position: absolute;
+      top: 70rpx;
+      left: 28rpx;
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      &__price {
+        width: 214rpx;
+        color: @color-text-red;
+      }
+    }
+  }
+
+  &-submit {
+    border-top: 1rpx solid @color-border-1px;
+    &-chek {
+      padding-left: 20px;
+    }
+  }
+}

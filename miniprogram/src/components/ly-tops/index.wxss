@@ -1,0 +1,18 @@
+.ly-tops {
+  text-align: center;
+  position: fixed;
+  right: 36rpx;
+  bottom: 160rpx;
+  z-index: 12;
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  border: 1rpx solid #989898;
+}
+.ly-tops-text {
+  display: block;
+  color: #3A3A3A;
+  font-size: 20rpx;
+}
