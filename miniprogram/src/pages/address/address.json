@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "backgroundColor": "#f7f7f7",
+  "usingComponents": {
+    "van-radio": "../../static/js/vant-weapp/dist/radio/index",
+    "van-radio-group": "../../static/js/vant-weapp/dist/radio-group/index",
+    "ly-address-edit": "../../components/ly-address-edit/index"
+  }
+}

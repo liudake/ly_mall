@@ -1,0 +1,53 @@
+<view class="ly-address-edits">
+  <view class="ly-address-edits-fieid">
+    <van-cell-group>
+      <van-field
+        value="{{ addressData.name }}"
+        required
+        clearable
+        label="收货人："
+        placeholder="请输入名字"
+        data-attr="name"
+        bind:change="onFocus"
+      />
+      
+      <van-field
+        value="{{ addressData.tel }}"
+        type="number"
+        label="联系电话："
+        placeholder="请输入手机或固定电话"
+        required
+        clearable
+        data-attr="tel"
+        bind:change="onFocus"
+      />
+      <picker mode="region" value="{{addressData.areaList || defaultRegion}}" bind:change="onRegionChange">
+        <van-field
+          value="{{ addressData.areaList }}"
+          label="收获地区："
+          placeholder="请选择省／市／区"
+          required
+          readonly
+          data-attr="address"
+          bind:confirm="onFocus"
+        />
+      </picker>
+  
+      <van-field
+        value="{{ addressData.addressDetail }}"
+        label="详细地址："
+        placeholder="请输入街道地址"
+        required
+        clearable
+        data-attr="addressDetail"
+        bind:confirm="onFocus"
+        border="{{ false }}"
+      />
+    </van-cell-group>
+  </view>
+
+  <van-button custom-class="ly-address-edits-btn" size="large" type="danger" bind:click="onSave">保存</van-button>
+  <van-button wx:if="showDelete" custom-class="ly-address-edits-btn" size="large" bind:click="onDelete">删除</van-button>
+  <van-button wx:if="showCancel" custom-class="ly-address-edits-btn" size="large" bind:click="onCancel">取消</van-button>
+</view>
+  

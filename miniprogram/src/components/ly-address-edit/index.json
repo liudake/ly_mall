@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-field": "../../static/js/vant-weapp/dist/field/index"
+  }
+}

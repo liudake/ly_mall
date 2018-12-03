@@ -1,0 +1,12 @@
+.ly-address-edits {
+  padding: 30rpx;
+}
+.ly-address-edits-fieid {
+  margin-bottom: 40rpx;
+}
+.ly-address-edits-fieid .van-cell {
+  background-color: #f6f6f6;
+}
+.ly-address-edits-btn {
+  margin-bottom: 20rpx;
+}

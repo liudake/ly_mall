@@ -49,6 +49,7 @@
     <van-submit-bar
       custom-class="ly-shopcart-submit"
       price="{{ total }}"
+      disabled="{{!result.length}}"
       button-text="结算({{result.length}})"
       catch:submit="onSubmit"
     >

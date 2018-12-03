@@ -10,7 +10,9 @@
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
     "pages/goodsDetail/goodsDetail",
-    "pages/shopcart/shopcart"
+    "pages/shopcart/shopcart",
+    "pages/order/order",
+    "pages/address/address"
   ],
   "window": {
     "backgroundColor": "#eeeeee",
@@ -48,6 +50,7 @@
   },
   "usingComponents": {
     "van-button": "./static/js/vant-weapp/dist/button/index",
-    "van-icon": "./static/js/vant-weapp/dist/icon/index"
+    "van-icon": "./static/js/vant-weapp/dist/icon/index",
+    "van-cell": "./static/js/vant-weapp/dist/cell/index"
   }
 }

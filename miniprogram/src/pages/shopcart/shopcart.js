@@ -89,7 +89,7 @@ Page({
   onChangeCount(e) {
     console.log('e', e);
     const index = e.currentTarget.dataset.index;
-    
+
     let list = this.data.list || [];
 
     list[index].num = e.detail;
@@ -99,6 +99,10 @@ Page({
     });
 
     this.getTotalPrice();
+  },
+
+  onSubmit(e) {
+    console.log('e', e);
   },
 
   handlerChoosed(data, id) {

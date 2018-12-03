@@ -1,0 +1,50 @@
+.ly-order-address {
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.ly-order-address-cell {
+  line-height: 0 !important;
+  padding: 30rpx !important;
+  align-items: center;
+}
+.ly-order-address-cell::before {
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  position: absolute;
+  background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+  background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+  background-size: 80px;
+}
+.ly-order-address-icon {
+  margin-right: 8px;
+}
+.ly-order-card__price {
+  font-size: 30rpx;
+}
+.ly-order-card .van-card__right {
+  line-height: 90px;
+}
+.ly-order-card .van-card__footer {
+  right: auto;
+}
+.ly-order-cell-total {
+  color: #666;
+  font-weight: bolder;
+}
+.ly-order-cell-total-custom {
+  margin-bottom: 10px;
+}
+.ly-order-cell-total-num {
+  margin-right: 16rpx;
+  letter-spacing: 4px;
+}
+.ly-order-cell-total-price {
+  color: #F44336;
+}
+.ly-order-cell-wechat-icon .van-icon-wechat {
+  padding-left: 8px;
+  line-height: 24px;
+}

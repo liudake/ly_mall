@@ -1,0 +1,71 @@
+<view class="ly-order">
+  <view class="ly-order-main">
+      <!-- 收获地址区 -->
+    <view class="ly-order-address">
+      <van-cell 
+        custom-class="ly-order-address-cell" 
+        title="新增收获地址"
+        url="../../pages/address/address"
+        is-link 
+        border="{{false}}"
+      >
+        <van-icon 
+          slot="icon" 
+          custom-class="ly-order-address-icon" 
+          name="add2" 
+          size="2.5em" 
+          color="#1989fa"
+        />
+      </van-cell>
+      <van-cell 
+        custom-class="ly-order-address-cell" 
+        title="一键获取微信地址"
+        is-link 
+        border="{{false}}"
+      >
+        <van-icon 
+          slot="icon" 
+          custom-class="ly-order-address-icon" 
+          name="wechat" 
+          size="2.4em" 
+          color="#3eaf35"
+        />
+      </van-cell>
+    </view>
+
+    <!-- 订单商品信息区 -->
+    <ly-panel title="商品信息">
+      <view class="ly-order-card">
+        <block wx:for="{{list}}">
+          <van-card 
+            num="{{item.num}}"
+            desc="{{item.item}}"
+            title="{{item.title}}"
+            thumb="{{item.thumb}}"
+          >
+            <view slot="footer" class="ly-order-card__price">¥ {{item.price}}</view>
+          </van-card>
+        </block>
+      </view>
+      <van-cell title="运费" value="包邮"/>
+      <van-cell custom-class="ly-order-cell-total-custom">
+        <view class="ly-order-cell-total">
+          <text class="ly-order-cell-total-num">共{{1}}件</text>
+          <text class="ly-order-cell-total-price">合计：¥ {{6.00}}</text>
+        </view>
+      </van-cell>
+      <van-cell title="支付方式" value="微信支付">
+        <van-icon slot="right-icon" class="ly-order-cell-wechat-icon" name="wechat" size="1.4em" color="#3eaf35" />
+      </van-cell>
+    </ly-panel>
+  </view>
+
+  <!-- 底部订单支付区   -->
+  <view class="ly-order-footer">
+    <van-submit-bar
+      price="{{ 600 }}"
+      button-text="去付款"
+      bind:submit="onConfirmToPay"
+    />
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<view class="ly-address">
+  <!-- 地址列表区 -->
+  <view class="ly-address-list">
+    <van-radio-group value="{{ radio }}">
+      <van-cell
+        wx:for="{{list}}"
+        wx:key="{{index}}"
+        custom-class="ly-address-item"
+        value-class="ly-address-item__value"
+        clickable
+      >
+        <van-radio
+          catch:tap="toggle"
+          data-name="{{ item.id }}"
+          name="{{ item.id }}"
+          label-position="left"
+          checked-color="#F44336"
+        >
+          <view class="ly-address-item__name"
+            >{{ item.name }}, {{ item.tel }}</view
+          >
+          <view class="ly-address-item__address">{{ item.addressDetail }}</view>
+        </van-radio>
+
+        <van-icon
+          slot="right-icon"
+          name="edit"
+          class="ly-address-item__edit"
+          data-item="{{item}}"
+          bind:click="onEdit"
+        ></van-icon>
+      </van-cell>
+    </van-radio-group>
+  </view>
+  <van-button class="ly-address-add" square size="large" type="danger" bind:click="onAddress"
+    >添加收货地址</van-button
+  >
+  <!-- 地址编辑区 -->
+  <view class="ly-address-edit-wrap" wx:if="{{showAddressEdit}}">
+    <ly-address-edit 
+      address-info="{{addressInfo}}"
+      bind:save="onSave"
+      bind:delete="onDeletes"
+      bind:cancel="onCancels"
+    />
+  </view>
+</view>

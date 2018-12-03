@@ -1,0 +1,83 @@
+@import '../../common/css/variable.less';
+
+.ly-order {
+  &-address {
+    margin-bottom: 10px;
+    background-color: @color-background;
+    &-cell {
+      line-height: 0 !important;
+      padding: 30rpx !important;
+      align-items: center;
+      &::before {
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        position: absolute;
+        background: -webkit-repeating-linear-gradient(
+          135deg,
+          #ff6c6c 0,
+          #ff6c6c 20%,
+          transparent 0,
+          transparent 25%,
+          #1989fa 0,
+          #1989fa 45%,
+          transparent 0,
+          transparent 50%
+        );
+        background: repeating-linear-gradient(
+          -45deg,
+          #ff6c6c 0,
+          #ff6c6c 20%,
+          transparent 0,
+          transparent 25%,
+          #1989fa 0,
+          #1989fa 45%,
+          transparent 0,
+          transparent 50%
+        );
+        background-size: 80px;
+      }
+    }
+    &-icon {
+      margin-right: 8px;
+    }
+  }
+  &-card {
+    &__price {
+      font-size: 30rpx;
+    }
+    .van-card {
+      &__right {
+        line-height: 90px;
+      }
+      &__footer {
+        right: auto;
+      }
+    }
+  }
+
+  &-cell {
+    &-total {
+      color: #666;
+      font-weight: bolder;
+      &-custom {
+        margin-bottom: 10px;
+      }
+      &-num {
+        margin-right: 16rpx;
+        letter-spacing: 4px;
+      }
+      &-price {
+        color: @color-text-red;
+      }
+    }
+    &-wechat-icon {
+      .van-icon-wechat {
+        padding-left: 8px;
+        line-height: 24px;
+      }
+    }
+  }
+}
