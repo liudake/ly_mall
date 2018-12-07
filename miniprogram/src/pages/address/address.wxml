@@ -1,6 +1,6 @@
 <view class="ly-address">
   <!-- 地址列表区 -->
-  <view class="ly-address-list">
+  <view class="ly-address-list" wx:if="{{list && list.length}}">
     <van-radio-group value="{{ radio }}">
       <van-cell
         wx:for="{{list}}"
@@ -32,9 +32,14 @@
       </van-cell>
     </van-radio-group>
   </view>
+  
+  <view wx:else>
+    你还没有收货地址哦～
+  </view>
+
   <van-button class="ly-address-add" square size="large" type="danger" bind:click="onAddress"
-    >添加收货地址</van-button
-  >
+    >添加收货地址</van-button>
+
   <!-- 地址编辑区 -->
   <view class="ly-address-edit-wrap" wx:if="{{showAddressEdit}}">
     <ly-address-edit 

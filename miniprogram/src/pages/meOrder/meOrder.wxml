@@ -1,0 +1,59 @@
+<view class="ly-me-orders">
+  <!-- 订单tab区 -->
+  <van-tabs
+    active="{{ active }}"
+    bind:change="onChange"
+    custom-class="ly-me-orders-tabs"
+  >
+    <block wx:for="{{ orderTabs }}" wx:key="{{item.id}}">
+      <van-tab title="{{item.label}}">
+        <block wx:for="{{orderAllList}}" wx:key="{{index}}">
+          <navigator
+            hover-class="none"
+            url="/pages/orderDetails/orderDetails?id={{item.id}}&state={{item.state}}"
+          >
+            <view class="ly-me-orders-card-header">
+              <view class="ly-me-orders-card-header-title"
+                >订单编号:{{ item.mid }}</view
+              >
+              <view class="ly-me-orders-card-header-state">{{
+                item.state
+              }}</view>
+            </view>
+            <van-card
+              custom-class="ly-me-orders-card"
+              price="{{item.price}}"
+              origin-price="{{item.originPrice}}"
+              num="{{item.num}}"
+              title="{{item.title}}"
+              thumb="{{item.thumb}}"
+            >
+              <view slot="footer" class="ly-me-orders-card-foot">
+                <text class="ly-me-orders-card-foot-num"
+                  >共{{ item.num }}件商品</text
+                >
+                <text class="ly-me-orders-card-foot-price"
+                  >待支付 ¥{{ item.price }}</text
+                >
+              </view>
+            </van-card>
+          </navigator>
+          <view class="ly-me-orders-card-footer">
+            <van-button
+              custom-class="ly-me-orders-card-footer-btn"
+              size="small"
+              plain
+              >取消订单</van-button
+            >
+            <van-button
+              custom-class="ly-me-orders-card-footer-btn ly-me-orders-card-footer-btn-active"
+              size="small"
+              plain
+              >立即付款</van-button
+            >
+          </view>
+        </block>
+      </van-tab>
+    </block>
+  </van-tabs>
+</view>

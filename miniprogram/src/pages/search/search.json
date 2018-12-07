@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "van-search": "../../static/js/vant-weapp/dist/search/index",
+    "van-tag": "../../static/js/vant-weapp/dist/tag/index"
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../common/css/variable.less';
+@import '../../common/css/mixin.less';
+
+.ly-me-orders {
+  height: 200px;
+  &-tabs {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  &-card {
+    background-color: @color-background !important;
+    .van-card__left {
+      font-size: 28rpx !important;
+    }
+    &-header {
+      .layout(@dir: row, @align:center);
+      margin-top: 10px;
+      padding: 0 12px;
+      height: 80rpx;
+      background-color: @color-background;
+      border-bottom: 1rpx solid @color-border-1px;
+      &-title {
+        flex: 1;
+        color: @color-text-gray;
+        font-size: 26rpx;
+      }
+      &-state {
+        color: @color-text-red;
+      }
+    }
+    &-foot {
+      &-num {
+        font-size: 26rpx;
+        color: @color-text-gray;
+      }
+      &-price {
+        margin-left: 14px;
+        font-size: 28rpx;
+        color: @color-text-red;
+      }
+    }
+    &-footer {
+      .layout(@dir: row, @justify: flex-end, @align:center);
+      padding: 2px 12px;
+      height: 80rpx;
+      background-color: @color-background;
+      border-top: 1rpx solid @color-border-1px;
+      &-btn{
+        margin-left: 12px;
+        &-active{
+          color: @color-text-red !important;
+          border:1px solid @color-text-red !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.ly-me-orders {
+  height: 200px;
+}
+.ly-me-orders-tabs {
+  height: 200px;
+  margin-bottom: 10px;
+}
+.ly-me-orders-card {
+  background-color: #fff !important;
+}
+.ly-me-orders-card .van-card__left {
+  font-size: 28rpx !important;
+}
+.ly-me-orders-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0 12px;
+  height: 80rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.ly-me-orders-card-header-title {
+  flex: 1;
+  color: #989898;
+  font-size: 26rpx;
+}
+.ly-me-orders-card-header-state {
+  color: #F44336;
+}
+.ly-me-orders-card-foot-num {
+  font-size: 26rpx;
+  color: #989898;
+}
+.ly-me-orders-card-foot-price {
+  margin-left: 14px;
+  font-size: 28rpx;
+  color: #F44336;
+}
+.ly-me-orders-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2px 12px;
+  height: 80rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f3f3f3;
+}
+.ly-me-orders-card-footer-btn {
+  margin-left: 12px;
+}
+.ly-me-orders-card-footer-btn-active {
+  color: #F44336 !important;
+  border: 1px solid #F44336 !important;
+}

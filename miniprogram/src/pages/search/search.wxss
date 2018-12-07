@@ -1,0 +1,33 @@
+.ly-search-nav {
+  border-bottom: 1px solid #dcdcdc;
+}
+.ly-search-nav .van-cell {
+  background-color: #f2f2f2;
+  border-radius: 36rpx;
+}
+.ly-search-tag {
+  margin-bottom: 14px;
+}
+.ly-search-tag-contro {
+  padding: 10px 14px;
+}
+.ly-search-tag-custom {
+  color: #000 !important;
+  padding: 4rpx 32rpx !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+}
+.ly-search-tag-wrap {
+  display: inline-block;
+}
+.ly-search-tag-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ly-search-tag-text {
+  flex: 1;
+}
+.ly-search-tag-icon {
+  display: block !important;
+}

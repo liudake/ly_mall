@@ -1,6 +1,27 @@
 @import '../../common/css/variable.less';
+@import '../../common/css/mixin.less';
 
 .ly-order {
+  &-main {
+    padding-bottom: 60px;
+  }
+  &-head {
+    min-height: 200rpx;
+    .layout();
+    background-color: #f9e4a5;
+    &-state {
+      .layout(@dir: row);
+      margin-bottom: 4px;
+      &__icon {
+        display: block !important;
+      }
+      &__text {
+        padding-left: 6px;
+        color: #ffc722;
+        font-size: 36rpx;
+      }
+    }
+  }
   &-address {
     margin-bottom: 10px;
     background-color: @color-background;
@@ -94,6 +115,22 @@
       .van-icon-wechat {
         padding-left: 8px;
         line-height: 24px;
+      }
+    }
+  }
+
+  &-detail {
+    &-info {
+      padding: 6px 12px;
+      font-size: 24rpx;
+      line-height: 24px;
+      color: @color-text-gray;
+      background-color: @color-background;
+    }
+    &-serial {
+      .layout(@dir:row, @justify:flex-start);
+      &-text {
+        flex: 1;
       }
     }
   }

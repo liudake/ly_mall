@@ -83,18 +83,81 @@ export const GOODS_LIST_ORDER_MOCK = [
   }
 ];
 
+export const GOODS_LIST_ME_ORDER_MOCK = [
+  {
+    mid: '1',
+    title: '加厚法莱绒床垫子学生宿舍1.5m1.8米床褥被单人1.2双人海绵榻榻米',
+    desc: '加厚法莱绒-格调蓝;900mm*1900mm',
+    price: '2.00',
+    originPrice: '23.00',
+    num: 3,
+    maxNum: 132,
+    state: '待付款',
+    thumb:
+      'http://img1.imgtn.bdimg.com/it/u=4095470285,4213575198&fm=26&gp=0.jpg'
+  },
+  {
+    mid: '2',
+    title: '加厚法莱绒床垫子学生宿舍1.5m1.8米床褥被单人1.2双人海绵榻榻米',
+    desc: '加厚法莱绒-格调蓝;900mm*1900mm',
+    price: '199.00',
+    originPrice: '233.00',
+    num: 3,
+    maxNum: 132,
+    state: '待发货',
+    thumb:
+      'http://img1.imgtn.bdimg.com/it/u=4095470285,4213575198&fm=26&gp=0.jpg'
+  },
+  {
+    mid: '3',
+    title: '加厚法莱绒床垫子学生宿舍1.5m1.8米床褥被单人1.2双人海绵榻榻米',
+    desc: '加厚法莱绒-格调蓝;900mm*1900mm',
+    price: '199.00',
+    originPrice: '233.00',
+    num: 3,
+    maxNum: 132,
+    state: '待收货',
+    thumb:
+      'http://img1.imgtn.bdimg.com/it/u=4095470285,4213575198&fm=26&gp=0.jpg'
+  }
+];
+
 export const RECEIVER = {
+  id: '1',
   name: '胡先生',
-  phone: 15032032323,
-  address: '火星',
-  detail: '007号'
+  tel: '15032032323',
+  addressDetail: '湖南省 衡阳市 常宁市 文三路 138 号东方通信大厦 7 楼 501 室'
 };
+
+export const SEARCH_HOT = [
+  {
+    label: 'LED显示器'
+  },
+  {
+    label: '发光字'
+  },
+  {
+    label: '材料1'
+  },
+  {
+    label: '材料2'
+  },
+  {
+    label: '材料3'
+  },
+  {
+    label: '材料4'
+  },
+  {
+    label: '材料5'
+  }
+];
 
 export const ADDRESS_LIST_MOCK = [
   {
     id: '1',
-    name: '张三',
-    tel: '13000000000',
+    name: '胡先生',
+    tel: '15032032323',
     areaList: ['湖南省', '衡阳市', '常宁市'],
     addressDetail: '文三路 138 号东方通信大厦 7 楼 501 室'
   },

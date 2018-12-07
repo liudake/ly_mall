@@ -8,7 +8,7 @@ Page({
   data: {
     list: GOODS_LIST_ORDER_MOCK,
     receiver: RECEIVER,
-    isAddress: false
+    query: {}
   },
 
   /**
@@ -35,21 +35,32 @@ Page({
     });
   },
 
+  onCopyBtn(e) {
+    wx.setClipboardData({
+      data: 'N83293289382932323bbbb',
+      success: function(res) {
+        console.log('res', res);
+        wx.showToast({
+          title: '复制成功'
+        });
+      }
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    console.log('options', options);
+    this.setData({
+      query: options
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    if (!utils.isEmptyObj(this.data.receiver)) {
-      this.setData({
-        isAddress: true
-      });
-    }
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示

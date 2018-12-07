@@ -1,0 +1,62 @@
+<view class="ly-search">
+  <!-- 搜索导航区 -->
+  <van-search
+    custom-class="ly-search-nav"
+    value="{{ value }}"
+    name="{{ value }}"
+    placeholder="请输入搜索关键词"
+    background="#fff"
+    show-action
+    bind:change="onSearch"
+    bind:cancel="onCancel"
+  >
+    <view slot="action" data-value="{{value}}" bind:tap="onSearch">搜索</view>
+  </van-search>
+
+  <!-- 搜索tag区 -->
+  <view class="ly-search-tag-contro">
+    <view class="ly-search-tag">
+      <view class="ly-search-tag-head">
+        <view class="ly-search-tag-text">最近搜索</view>
+        <van-icon
+          custom-class="ly-search-tag-icon"
+          name="delete"
+          bind:click="onDeleteHistory"
+        ></van-icon>
+      </view>
+      <block wx:for="{{searchListHot}}" wx:key="{{index}}">
+        <view
+          class="ly-search-tag-wrap"
+          data-name="{{item.label}}"
+          bind:tap="onTag"
+        >
+          <van-tag
+            custom-class="ly-search-tag-custom"
+            size="medium"
+            round
+            color="#dcdcdc"
+            >{{ item.label }}</van-tag
+          >
+        </view>
+      </block>
+    </view>
+    <view class="ly-search-tag">
+      <view class="ly-search-tag-head">热门搜索</view>
+      <block wx:for="{{searchListHot}}" wx:key="{{index}}">
+        <view
+          class="ly-search-tag-wrap"
+          data-name="{{item.label}}"
+          bind:tap="onTag"
+        >
+          <van-tag
+            custom-class="ly-search-tag-custom"
+            size="medium"
+            round
+            color="#dcdcdc"
+            >{{ item.label }}</van-tag
+          >
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "backgroundColor": "#f7f7f7",
+  "usingComponents": {
+    "van-card": "../../static/js/vant-weapp/dist/card/index",
+    "van-submit-bar": "../../static/js/vant-weapp/dist/submit-bar/index",
+    "ly-panel": "../../components/ly-panel/index"
+  }
+}

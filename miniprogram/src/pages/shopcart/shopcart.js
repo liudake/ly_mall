@@ -103,6 +103,9 @@ Page({
 
   onSubmit(e) {
     console.log('e', e);
+    wx.navigateTo({
+      url: '../../pages/order/order'
+    });
   },
 
   handlerChoosed(data, id) {

@@ -1,42 +1,61 @@
 <view class="ly-order">
   <view class="ly-order-main">
-      <!-- 收获地址区 -->
-    <view class="ly-order-address">
-      <van-cell 
-        custom-class="ly-order-address-cell" 
-        title="新增收获地址"
-        url="../../pages/address/address"
-        is-link 
-        border="{{false}}"
-      >
-        <van-icon 
-          slot="icon" 
-          custom-class="ly-order-address-icon" 
-          name="add2" 
-          size="2.5em" 
-          color="#1989fa"
-        />
-      </van-cell>
-      <van-cell 
-        custom-class="ly-order-address-cell" 
-        title="一键获取微信地址"
-        is-link 
-        border="{{false}}"
-      >
-        <van-icon 
-          slot="icon" 
-          custom-class="ly-order-address-icon" 
-          name="wechat" 
-          size="2.4em" 
-          color="#3eaf35"
-        />
-      </van-cell>
-    </view>
+    <!-- 已有收获地址区 -->
+    <block wx:if="{{isAddress}}">
+      <view class="ly-order-address">
+        <van-cell 
+          icon="location"
+          is-link
+          custom-class="ly-order-address-cell"
+          url="../../pages/address/address"
+        >
+          <view class="ly-order-address-info">
+            <text class="ly-order-address-info-name">{{receiver.name}}</text><text class="ly-order-address-info-tel">{{receiver.tel}}</text>
+            <view class="ly-order-address-info-address">{{receiver.addressDetail}}</view>
+          </view>
+        </van-cell>
+      </view>
+    </block>
+
+    <!-- 暂无收获地址区 -->
+    <block wx:else>
+      <view class="ly-order-address">
+        <van-cell 
+          custom-class="ly-order-address-cell" 
+          title="新增收获地址"
+          url="../../pages/address/address"
+          is-link 
+          border="{{false}}"
+        >
+          <van-icon 
+            slot="icon" 
+            custom-class="ly-order-address-icon" 
+            name="add2" 
+            size="2.5em" 
+            color="#1989fa"
+          />
+        </van-cell>
+        <van-cell 
+          custom-class="ly-order-address-cell" 
+          title="一键获取微信地址"
+          is-link 
+          border="{{false}}"
+        >
+          <van-icon 
+            slot="icon" 
+            custom-class="ly-order-address-icon" 
+            name="wechat" 
+            size="2.4em" 
+            color="#3eaf35"
+          />
+        </van-cell>
+      </view>
+    </block>
 
     <!-- 订单商品信息区 -->
     <ly-panel title="商品信息">
       <view class="ly-order-card">
-        <block wx:for="{{list}}">
+        <block wx:for="{{list}}" wx:key="{{index}}">
           <van-card 
             num="{{item.num}}"
             desc="{{item.item}}"
@@ -50,7 +69,7 @@
       <van-cell title="运费" value="包邮"/>
       <van-cell custom-class="ly-order-cell-total-custom">
         <view class="ly-order-cell-total">
-          <text class="ly-order-cell-total-num">共{{1}}件</text>
+          <text class="ly-order-cell-total-num">共{{3}}件</text>
           <text class="ly-order-cell-total-price">合计：¥ {{6.00}}</text>
         </view>
       </van-cell>

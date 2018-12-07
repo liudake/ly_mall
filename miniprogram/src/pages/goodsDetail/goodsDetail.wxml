@@ -166,7 +166,7 @@
           type="danger" 
           size="large" 
           square
-          bind:click="onBuyHide"
+          bind:click="tapOrder"
         >下一步</van-button>
       </view>
     </view>
@@ -189,7 +189,7 @@
         icon="cart"
         text="购物车"
         info="11"
-        bind:click="onClickIcon"
+        bind:click="onClickShopcartTap"
       />
       <van-goods-action-button
         text="加入购物车"

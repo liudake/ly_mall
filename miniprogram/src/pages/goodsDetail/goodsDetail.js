@@ -128,6 +128,12 @@ Page({
     });
   },
 
+  onClickShopcartTap() {
+    wx.switchTab({
+      url: '../../pages/shopcart/shopcart'
+    });
+  },
+
   onClickShopcart() {
     this.onBuyShow();
   },
@@ -161,6 +167,13 @@ Page({
     const picture = e.currentTarget.dataset.picture;
     wx.previewImage({
       urls: [picture]
+    });
+  },
+
+  tapOrder() {
+    this.onBuyHide();
+    wx.navigateTo({
+      url: '../../pages/order/order'
     });
   },
 

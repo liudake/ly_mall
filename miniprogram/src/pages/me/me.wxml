@@ -1,0 +1,54 @@
+<view class="ly-me">
+  <!-- 我的信息头部区 -->
+  <view class="ly-me-header">
+    <view class="ly-me-user-info">
+      <image
+        class="ly-me-user-circle"
+        src="https://avatars1.githubusercontent.com/u/19321222?s=60&v=4"
+      ></image>
+      <view class="ly-me-user-detail">
+        <view class="ly-me-user-name bold">{{ name || '匿名' }}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 我的订单区 -->
+  <view class="ly-me-order">
+    <view class="ly-me-order-title">
+      <text class="ly-me-order-text bold">我的订单</text>
+      <text class="ly-me-order-all" bind:tap="jumpOrderAll">查看全部订单 ></text>
+    </view>
+    <view class="ly-me-order-list">
+      <block wx:for="{{orderList}}" wx:key="{{index}}">
+        <view class="ly-me-order-item">
+          <van-icon color="" name="{{item.icon}}" size="36rpx"></van-icon> <view>{{item.label}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 更多服务区 -->
+  <view class="ly-me-server">
+    <van-cell
+      icon="goods-collect"
+      title="优惠券"
+      value="1"
+      is-link
+    />
+    <van-cell
+      icon="goods-collect"
+      title="收货地址"
+      is-link
+    />
+    <van-cell
+      icon="goods-collect"
+      title="客服中心"
+      is-link
+    />
+    <van-cell
+      icon="shopping-cart"
+      title="我要开店"
+      is-link
+    />
+  </view>
+</view>

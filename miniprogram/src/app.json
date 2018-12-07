@@ -2,8 +2,9 @@
   "pages": [
     "pages/authorize/index",
     "pages/index/index",
-    "pages/me/index",
+    "pages/me/me",
     "pages/userConsole/userConsole",
+    "pages/search/search",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
@@ -12,6 +13,8 @@
     "pages/goodsDetail/goodsDetail",
     "pages/shopcart/shopcart",
     "pages/order/order",
+    "pages/orderDetails/orderDetails",
+    "pages/meOrder/meOrder",
     "pages/address/address"
   ],
   "window": {
@@ -43,7 +46,7 @@
       {
         "iconPath": "./common/images/my@2x.png",
         "selectedIconPath": "./common/images/my@2x.png",
-        "pagePath": "pages/me/index",
+        "pagePath": "pages/me/me",
         "text": "个人中心"
       }
     ]

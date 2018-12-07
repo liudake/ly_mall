@@ -1,0 +1,72 @@
+<view class="ly-order">
+  <view class="ly-order-main">
+    <!-- 订单当前状态区 -->
+    <view class="ly-order-head">
+      <!-- <van-cell 
+        icon="balance-pay"
+        title="等待买家付款"
+        custom-class="ly-order-address-cell"
+      >
+      </van-cell> -->
+      <view class="ly-order-head-state">
+        <van-icon size="32rpx" name="balance-pay" custom-class="ly-order-head-state__icon"></van-icon>
+        <view class="ly-order-head-state__text">{{query.state === '1' && '待付款'}}</view>
+      </view>
+      <view class="ly-order-head-price">还需要支付 ¥ 349.00</view>
+    </view>
+
+    <!-- 已有收获地址区 -->
+    <view class="ly-order-address">
+      <van-cell 
+        icon="location"
+        custom-class="ly-order-address-cell"
+      >
+        <view class="ly-order-address-info">
+          <text class="ly-order-address-info-name">{{receiver.name}}</text><text class="ly-order-address-info-tel">{{receiver.tel}}</text>
+          <view class="ly-order-address-info-address">{{receiver.addressDetail}}</view>
+        </view>
+      </van-cell>
+    </view>
+
+    <!-- 订单商品信息区 -->
+    <ly-panel title="商品信息">
+      <view class="ly-order-card">
+        <block wx:for="{{list}}" wx:key="{{index}}">
+          <van-card 
+            num="{{item.num}}"
+            desc="{{item.item}}"
+            title="{{item.title}}"
+            thumb="{{item.thumb}}"
+          >
+            <view slot="footer" class="ly-order-card__price">¥ {{item.price}}</view>
+          </van-card>
+        </block>
+      </view>
+      <van-cell title="运费" value="包邮"/>
+      <van-cell custom-class="ly-order-cell-total-custom">
+        <view class="ly-order-cell-total">
+          <text class="ly-order-cell-total-num">共{{3}}件</text>
+          <text class="ly-order-cell-total-price">合计：¥ {{6.00}}</text>
+        </view>
+      </van-cell>
+    </ly-panel>
+
+    <view class="ly-order-detail-info">
+      <view class="ly-order-detail-serial">
+        <text class="ly-order-detail-serial-text">订单编号：N83293289382932323</text>
+        <van-button size="small" bind:click="onCopyBtn">复制编号</van-button>
+      </view>
+      <view class="ly-order-detail-date">创建时间：<text>2018-12-05 13:23:00</text></view>
+    </view>
+
+  </view>
+
+  <!-- 底部订单支付区   -->
+  <view class="ly-order-footer" wx:if="{{query.state === '1'}}"> 
+    <van-submit-bar
+      price="{{ 600 }}"
+      button-text="去付款"
+      bind:submit="onConfirmToPay"
+    />
+  </view>
+</view>

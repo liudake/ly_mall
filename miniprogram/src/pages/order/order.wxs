@@ -1,0 +1,9 @@
+var utils = {
+  isEmptyObj: function(obj) {
+    return '1'
+  }
+};
+
+module.exports = {
+  isEmptyObj: utils.isEmptyObj
+};
